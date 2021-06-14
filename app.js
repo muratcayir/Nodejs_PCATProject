@@ -9,11 +9,12 @@ const photoController = require('./controllers/photoController');
 const pageController = require('./controllers/pageController');
 const app = express();
 
-mongoose.connect('mongodb+srv://murat:fL9AFBX6etQuLT6w@cluster0.mng1m.mongodb.net/pcat-db?retryWrites=true&w=majority', {
+mongoose.connect('mongodb://localhost/smartedu-db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
-}).then(()=>{
+  useCreateIndex: true
+});.then(()=>{
   console.log("db connected")
 }).catch((error)=>
 {
